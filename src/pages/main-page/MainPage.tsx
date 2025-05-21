@@ -3,7 +3,7 @@ import {request} from "../../services/request.ts";
 
 const MainPage = () => {
 
-  request('/lol').then(res => console.log(res));
+  request('/api/lol/lol').then(res => console.log(res));
 
   return (
       <div className={styles.container}>
