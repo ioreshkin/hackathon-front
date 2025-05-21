@@ -1,11 +1,13 @@
-FROM node:20 AS builder
+# syntax=docker/dockerfile:1.4
+
+FROM node:20-alpine AS frontend-builder
 WORKDIR /app
-COPY frontend/package*.json ./
-RUN npm install
-COPY frontend/. .
+COPY frontend/package*.json .
+RUN npm ci
+COPY frontend .
 RUN npm run build
 
 FROM nginx:alpine
-COPY --from=builder /app/dist /usr/share/nginx/html
+COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 EXPOSE 80
