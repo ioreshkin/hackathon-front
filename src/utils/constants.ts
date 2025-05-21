@@ -1,1 +1,1 @@
-export const BASE_URL = 'https://www.hackathon-ujin.ru';
+export const BASE_URL = 'localhost';
