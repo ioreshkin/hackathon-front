@@ -11,9 +11,6 @@ COPY --from=frontend-builder /app/dist /usr/share/nginx/html
 
 COPY nginx/nginx.conf /etc/nginx/conf.d/default.conf
 
-COPY certbots/fullchain.pem /etc/ssl/certs/fullchain.pem
-COPY certbots/privkey.pem /etc/ssl/private/privkey.pem
-
 EXPOSE 80
 EXPOSE 443
 
