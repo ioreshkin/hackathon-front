@@ -15,23 +15,23 @@ function App() {
 
   const dispatch = useAppDispatch();
 
-  // useEffect(() => {
-  //
-  //   simulate();
-  //
-  //   dispatch(fetchNotifications());
-  //   dispatch(fetchStatuses());
-  //   dispatch(fetchEmergencyReport());
-  //
-  //   const intervalId = setInterval(() => {
-  //     dispatch(fetchNotifications());
-  //     dispatch(fetchStatuses());
-  //     dispatch(fetchEmergencyReport());
-  //     getDailyReport().then(res => console.log(res));
-  //   }, 10000);
-  //
-  //   return () => clearInterval(intervalId);
-  // }, []);
+  useEffect(() => {
+
+    simulate();
+
+    dispatch(fetchNotifications());
+    dispatch(fetchStatuses());
+    dispatch(fetchEmergencyReport());
+
+    const intervalId = setInterval(() => {
+      dispatch(fetchNotifications());
+      dispatch(fetchStatuses());
+      dispatch(fetchEmergencyReport());
+      getDailyReport().then(res => console.log(res));
+    }, 10000);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   return (
         <Router>
