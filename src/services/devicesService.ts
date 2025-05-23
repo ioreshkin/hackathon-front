@@ -11,7 +11,7 @@ export const getStatuses = async () => {
 };
 
 export const getEmergencyReport = async () => {
-  return await request(LOCAL_BASE_URL + '/report_text');
+  return await request(LOCAL_BASE_URL + '/report');
 };
 
 export const getDailyReport = async () => {
