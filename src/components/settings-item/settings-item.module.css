@@ -1,0 +1,23 @@
+.container {
+    background-color: #232323;
+    border-radius: 2rem;
+    border: 1px solid #00C0C9;
+    height: 15rem;
+    width: 15rem;
+    padding: 1rem;
+}
+
+.container h2 {
+    font-size: 1.2rem;
+    color: #FFF;
+}
+
+.container img {
+    height: 3rem;
+}
+
+.top_row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

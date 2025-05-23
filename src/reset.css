@@ -18,6 +18,7 @@ a,
 a:link,
 a:visited {
   text-decoration: none;
+  color: inherit;
 }
 
 a:hover {
@@ -112,7 +113,7 @@ legend {
 
 html {
   font-size: 16px;
-  background-color: #f3f6ff;
+  background-color: #111;
 }
 
 @media (max-width: 1600px) {

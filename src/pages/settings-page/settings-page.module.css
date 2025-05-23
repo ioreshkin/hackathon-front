@@ -1,0 +1,28 @@
+.container {
+    padding: 1.5rem 2rem;
+}
+
+.header_container {
+    display: flex;
+    gap: 2rem;
+}
+
+.header_container h1 {
+    color: #FFF;
+    font-size: 2rem;
+}
+
+.header_container img {
+    height: 2rem;
+}
+
+.settings_container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.settings_row {
+    display: flex;
+    justify-content: space-between;
+}

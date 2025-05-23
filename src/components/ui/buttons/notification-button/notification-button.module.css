@@ -1,0 +1,26 @@
+.container {
+    position: relative;
+}
+
+.container img {
+    height: 2rem
+}
+
+.round {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: -1rem;
+    margin-right: -1rem;
+    border-radius: 50%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.round p {
+    color: #FFF;
+}

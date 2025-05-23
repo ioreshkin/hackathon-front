@@ -4,18 +4,6 @@ export const request = (endpoint: string, options?: RequestInit) => {
   return fetch(BASE_URL + endpoint, options).then(checkResponse);
 };
 
-export const requestWithAuth = (endpoint: string, options?: RequestInit) => {
-  const updatedOptions = {
-    ...options,
-    // headers: {
-    //   ...options?.headers,
-    //   Authorization: `Bearer ${keycloak.token}`,
-    // },
-  };
-
-  return fetch(BASE_URL + endpoint, updatedOptions).then(checkResponse);
-};
-
 const checkResponse = async (res: Response) => {
   if (!res.ok) {
     const errorBody = await res.json().catch(() => null);
