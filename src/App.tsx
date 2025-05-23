@@ -15,14 +15,6 @@ function App() {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    fetch('api/devices/anomalies').then(res => console.log(res));
-    fetch('/api/devices/anomalies').then(res => console.log(res));
-    fetch('backend/api/devices/anomalies').then(res => console.log(res));
-    fetch('/backend/api/devices/anomalies').then(res => console.log(res));
-    fetch('hackathon-ujin.ru/api/devices/anomalies').then(res => console.log(res));
-    fetch('/hackathon-ujin.ru/api/devices/anomalies').then(res => console.log(res));
-    fetch('localhost/api/devices/anomalies').then(res => console.log(res));
-    fetch('/localhost/api/devices/anomalies').then(res => console.log(res));
 
     const intervalId = setInterval(() => {
       dispatch(fetchNotifications());

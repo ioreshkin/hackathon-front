@@ -1,7 +1,5 @@
-import {BASE_URL} from '../utils/constants.ts';
-
 export const request = (endpoint: string, options?: RequestInit) => {
-  return fetch(BASE_URL + endpoint, options).then(checkResponse);
+  return fetch(endpoint, options).then(checkResponse);
 };
 
 const checkResponse = async (res: Response) => {
