@@ -11,16 +11,19 @@ import {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {notificationSlice} from '../../slices/notificationSlice.ts';
 import {setSettings} from '../../services/notifyService.ts';
+import {useAppSelector} from '../../services/hooks.ts';
 
 const SettingsPage = () => {
 
   const navigate = useNavigate();
 
-  const [hum, setHum] = useState(true);
-  const [temp, setTemp] = useState(true);
-  const [co2, setCo2] = useState(true);
-  const [lux, setLux] = useState(true);
-  const [airIaq, setAirIaq] = useState(true);
+  const {settings} = useAppSelector(state => state.notification);
+
+  const [hum, setHum] = useState(settings.hum);
+  const [temp, setTemp] = useState(settings.temp);
+  const [co2, setCo2] = useState(settings.co2);
+  const [lux, setLux] = useState(settings.lux);
+  const [airIaq, setAirIaq] = useState(settings.airIaq);
 
   const dispatch = useDispatch();
 

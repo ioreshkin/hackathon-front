@@ -1,32 +1,16 @@
 import styles from './daily-reports.module.css';
-import {useState} from 'react';
-import {useAppSelector} from '../../services/hooks.ts';
-import EmergencyReportsItem from '../emergency-reports-item/EmergencyReportsItem.tsx';
-import Button from '../ui/buttons/button/Button.tsx';
 
-const DailyReports = () => {
-  const [count, setCount] = useState(0);
-  const {dailyReports} = useAppSelector(state => state.reports);
+interface ComponentProps {
+  onClick: () => void;
+}
 
-  const getFilteredReports = () => {
-    return dailyReports.slice(0, count);
-  };
-
-  const handleShowMoreClick = () => {
-    setCount(count + 5);
-  };
+const DailyReports = ({onClick}:ComponentProps) => {
 
   return (
-      <div className={styles.container}>
-        {getFilteredReports().map((report, index) => (
-          <EmergencyReportsItem data={report} key={index}/>
-        ))}
+      <div className={styles.container} onClick={onClick}>
+        <h1>Сегодня</h1>
 
-        {(count < dailyReports.length) && (
-            <div className={styles.button_container}>
-              <Button onClick={handleShowMoreClick}>Показать больше</Button>
-            </div>
-        )}
+        <p>{Date.now()}</p>
       </div>
   );
 };

@@ -9,8 +9,6 @@ interface ComponentProps {
 
 const NotificationItem = ({data}:ComponentProps) => {
 
-  console.log(data);
-
   return (
       <div className={styles.container}>
         <img src={data.level == 'warning' ? warningImg : criticalImg} alt="аномальное значение"/>

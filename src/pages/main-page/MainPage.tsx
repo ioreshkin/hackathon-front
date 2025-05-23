@@ -4,10 +4,15 @@ import EmergencyReports from '../../components/emergency-reports/EmergencyReport
 import DailyReports from '../../components/daily-reports/DailyReports.tsx';
 import NotificationButton from '../../components/ui/buttons/notification-button/NotificationButton.tsx';
 import {useAppSelector} from '../../services/hooks.ts';
+import {useState} from 'react';
+import Modal from '../../components/modals/modal/Modal.tsx';
+import Charts from '../../components/charts/Charts.tsx';
 
 const MainPage = () => {
 
   const {flats} = useAppSelector(state => state.flats);
+
+  const [showModal, setShowModal] = useState(false);
 
   const getFlat = (id: number) => {
     return flats.find((f) => f.id === id);
@@ -24,6 +29,10 @@ const MainPage = () => {
         currentFlat.lux == 'warning' || currentFlat.airIaq == 'warning' || currentFlat.temp == 'warning') {
       return styles.yellowDot;
     } else return '';
+  };
+
+  const handleTodayReportClick = () => {
+    setShowModal(true);
   };
 
   return (
@@ -57,11 +66,13 @@ const MainPage = () => {
           <div>
             <h1 className={styles.report_head}>Отчеты за день</h1>
             <div>
-              <DailyReports />
+              <DailyReports onClick={handleTodayReportClick}/>
             </div>
           </div>
 
         </div>
+
+        {showModal && <Modal onClose={() => setShowModal(false)}><Charts/></Modal>}
       </div>
   );
 };

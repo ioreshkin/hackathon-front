@@ -17,6 +17,11 @@ export interface IEmergencyReport {
   events: IEmergencyEvent[];
 }
 
+export interface IDailyReport {
+  parameter: string;
+  flats: IFlatValues[];
+}
+
 export interface ISettings {
   hum: boolean;
   temp: boolean;
@@ -32,4 +37,9 @@ export interface IFlat {
   co2: 'normal' | 'warning' | 'critical';
   lux: 'normal' | 'warning' | 'critical';
   airIaq: 'normal' | 'warning' | 'critical';
+}
+
+export interface IFlatValues {
+  id: number;
+  values: number[];
 }

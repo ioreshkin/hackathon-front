@@ -1,0 +1,18 @@
+.container {
+    position: relative;
+    max-width: 50rem;
+    background-color: #fff;
+    border-radius: 1em;
+    z-index: 1001;
+    display: flex;
+    padding: 2em 1em;
+    overflow-y: auto;
+    flex-direction: column;
+}
+
+.close {
+    cursor: pointer;
+    position: absolute;
+    right: 1em;
+    width: 2em;
+}
