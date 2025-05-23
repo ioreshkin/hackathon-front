@@ -6,7 +6,7 @@ import NotificationPage from './pages/notifications-page/NotificationPage.tsx';
 import SettingsPage from './pages/settings-page/SettingsPage.tsx';
 import {useEffect} from 'react';
 import {useAppDispatch} from './services/hooks.ts';
-import {fetchNotifications, notificationSlice} from './slices/notificationSlice.ts';
+import {fetchNotifications} from './slices/notificationSlice.ts';
 import {fetchStatuses} from './slices/flatsSlice.ts';
 import {fetchEmergencyReport} from './slices/reportsSlice.ts';
 import {simulate} from "./services/devicesService.ts";
