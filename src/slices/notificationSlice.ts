@@ -14,8 +14,8 @@ interface INotificationSlice {
 }
 
 const initialState: INotificationSlice = {
-  notifications: [],
-  countOfUnchecked: 0,
+  notifications: [{flat:1, level: 'warning', parameter: 'co2', timestamp:123123123}],
+  countOfUnchecked: 1,
   settings: {
     hum: true,
     temp: true,
