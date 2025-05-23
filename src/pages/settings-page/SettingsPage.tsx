@@ -10,16 +10,17 @@ import settings5Image from '../../images/settings5.png';
 import {useEffect, useState} from 'react';
 import {useDispatch} from 'react-redux';
 import {notificationSlice} from '../../slices/notificationSlice.ts';
+import {setSettings} from '../../services/notifyService.ts';
 
 const SettingsPage = () => {
 
   const navigate = useNavigate();
 
-  const [hum, setHum] = useState(false);
-  const [temp, setTemp] = useState(false);
-  const [co2, setCo2] = useState(false);
-  const [lux, setLux] = useState(false);
-  const [airIaq, setAirIaq] = useState(false);
+  const [hum, setHum] = useState(true);
+  const [temp, setTemp] = useState(true);
+  const [co2, setCo2] = useState(true);
+  const [lux, setLux] = useState(true);
+  const [airIaq, setAirIaq] = useState(true);
 
   const dispatch = useDispatch();
 
@@ -32,6 +33,13 @@ const SettingsPage = () => {
       airIaq: airIaq,
     }));
 
+    setSettings({
+      hum: hum,
+      temp: temp,
+      co2: co2,
+      lux: lux,
+      airIaq: airIaq,
+    });
 
   }, [hum, temp, co2, lux, airIaq]);
 

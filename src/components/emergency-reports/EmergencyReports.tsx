@@ -15,13 +15,13 @@ const EmergencyReports = () => {
     if (emergencyReport) {
       setEvents(emergencyReport.events.slice(0, count));
     }
-  }, [emergencyReport]);
+  }, [emergencyReport, count]);
 
   const handleShowMoreClick = () => {
     setCount(count + 5);
   };
 
-  if (!events) return null;
+  if (!events || !emergencyReport) return null;
 
   return (
       <div className={styles.container}>
@@ -29,7 +29,7 @@ const EmergencyReports = () => {
           <EmergencyReportsItem data={report} key={index} />
         ))}
 
-        {(count < events.length) && (
+        {(count < emergencyReport.events.length) && (
             <div className={styles.button_container}>
               <Button onClick={handleShowMoreClick}>Показать больше</Button>
             </div>

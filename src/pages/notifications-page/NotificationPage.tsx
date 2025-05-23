@@ -12,8 +12,6 @@ const NotificationPage = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
-  console.log(notifications);
-
   useEffect(() => {
     dispatch(notificationSlice.actions.checkNotifications());
   }, []);

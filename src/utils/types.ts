@@ -3,6 +3,7 @@ export interface INotification {
   parameter: string;
   level: 'warning' | 'critical';
   timestamp: number;
+  text: string;
 }
 
 export interface IEmergencyEvent {

@@ -17,7 +17,7 @@ const NotificationItem = ({data}:ComponentProps) => {
         <div>
           <h2>{data.level == 'warning' ? 'Внимание, аномальное значение датчика!' :
               'Внимание, чрезвычайное происшествие!'}</h2>
-          <p>Какой-то текст</p>
+          <p>{data.text}</p>
         </div>
 
 
