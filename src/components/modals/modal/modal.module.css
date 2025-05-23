@@ -1,6 +1,6 @@
 .container {
     position: relative;
-    max-width: 50rem;
+    width: 100%;
     background-color: #fff;
     border-radius: 1em;
     z-index: 1001;
