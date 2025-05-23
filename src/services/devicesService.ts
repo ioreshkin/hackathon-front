@@ -14,8 +14,12 @@ export const getEmergencyReport = async () => {
   return await request(LOCAL_BASE_URL + '/report');
 };
 
+export const getDailyReport = async () => {
+  return await request(LOCAL_BASE_URL + '/report_data');
+};
+
 export const simulate = async () => {
   return await request(LOCAL_BASE_URL + '/simulate', {
     method: 'POST',
   });
-}
+};

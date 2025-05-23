@@ -9,7 +9,7 @@ import {useAppDispatch} from './services/hooks.ts';
 import {fetchNotifications} from './slices/notificationSlice.ts';
 import {fetchStatuses} from './slices/flatsSlice.ts';
 import {fetchEmergencyReport} from './slices/reportsSlice.ts';
-import {simulate} from "./services/devicesService.ts";
+import {getDailyReport, simulate} from './services/devicesService.ts';
 
 function App() {
 
@@ -27,11 +27,11 @@ function App() {
       dispatch(fetchNotifications());
       dispatch(fetchStatuses());
       dispatch(fetchEmergencyReport());
+      getDailyReport().then(res => console.log(res));
     }, 10000);
 
     return () => clearInterval(intervalId);
   }, []);
-
 
   return (
         <Router>

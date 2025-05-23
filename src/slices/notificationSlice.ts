@@ -38,6 +38,7 @@ export const notificationSlice = createSlice({
   }, extraReducers: (builder) => {
     builder
         .addCase(fetchNotifications.fulfilled, (state, action:PayloadAction<INotification[]>) => {
+          console.log(action.payload);
           state.notifications = action.payload;
           state.countOfUnchecked += action.payload.length;
         });
