@@ -21,7 +21,7 @@ const EmergencyReports = () => {
     setCount(count + 5);
   };
 
-  if (!events || !emergencyReport) return null;
+  if (!events || !emergencyReport || emergencyReport.events.length < 1) return null;
 
   return (
       <div className={styles.container}>
