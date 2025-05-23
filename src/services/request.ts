@@ -1,5 +1,5 @@
 export const request = (endpoint: string, options?: RequestInit) => {
-  return fetch(endpoint, options).then(checkResponse);
+  return fetch('/api' + endpoint, options).then(checkResponse);
 };
 
 const checkResponse = async (res: Response) => {
