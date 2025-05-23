@@ -9,12 +9,19 @@ import {useAppDispatch} from './services/hooks.ts';
 import {fetchNotifications} from './slices/notificationSlice.ts';
 import {fetchStatuses} from './slices/flatsSlice.ts';
 import {fetchEmergencyReport} from './slices/reportsSlice.ts';
+import {simulate} from "./services/devicesService.ts";
 
 function App() {
 
   const dispatch = useAppDispatch();
 
   useEffect(() => {
+
+    simulate();
+
+    dispatch(fetchNotifications());
+    dispatch(fetchStatuses());
+    dispatch(fetchEmergencyReport());
 
     const intervalId = setInterval(() => {
       dispatch(fetchNotifications());
